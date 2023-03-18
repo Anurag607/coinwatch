@@ -1,7 +1,7 @@
 import React, { PropsWithChildren } from "react";
 import Navbar from "./Navbar";
 import Sidebar from "./Sidebar";
-// import Footer from "./Footer";
+import Footer from "./Footer";
 
 const Layout = (props: PropsWithChildren) => {
   return (
@@ -15,7 +15,9 @@ const Layout = (props: PropsWithChildren) => {
         {props.children}
       </div>
 
-      <div>{/* <Footer /> */}</div>
+      <div>
+        <Footer />
+      </div>
     </div>
   );
 };
