@@ -109,6 +109,11 @@ a {
   cursor: pointer !important;
 }
 
+path,
+svg {
+  cursor: pointer;
+}
+
 /* Scrollbar */
 ::-webkit-scrollbar {
   height: 0.05rem;

@@ -13,6 +13,12 @@ module.exports = {
       gridTemplateRows: {
         header: "64px auto", //for the navbar layout
       },
+      screens: {
+        "max-md": { 'max': '767px' },
+        // => @media (max-width: 767px) { ... }
+        "filter-search-bar": { 'max': '600px' },
+        // => @media (max-width: 600px) { ... }
+      },
     },
   },
 };

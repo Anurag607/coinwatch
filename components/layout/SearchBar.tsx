@@ -5,14 +5,23 @@ import { setCoinData, filterCoinData } from "@/redux/reducers/coinSlice";
 
 const SearchBar = () => {
   const { backupData } = useSelector((state: any) => state.coins);
+  const [searchParams, setSearchParams] = React.useState<string>("");
   const dispatch = useDispatch();
+
+  const changleEventHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
+    let searchText = event.currentTarget.value;
+    setSearchParams(searchText);
+    searchText.length > 0
+      ? dispatch(filterCoinData(searchText))
+      : dispatch(setCoinData(backupData));
+  };
 
   return (
     <div
       className={classNames({
-        "pb-2 dark:bg-gray-900": true,
+        "dark:bg-gray-900": true,
         "relative flex items-center justify-center": true,
-        "sm:w-[100vw] ml-[0rem]": true,
+        " ml-[0rem]": true,
         "lg:w-fit ml-[0rem]": true,
       })}
     >
@@ -39,7 +48,7 @@ const SearchBar = () => {
           type="text"
           id="table-search"
           className={classNames({
-            "block p-2 pl-10 w-[50vw] bg-gray-50": true, //display, padding, width and bg styling
+            "block p-2 pl-10 w-[105%] bg-gray-50": true, //display, padding, width and bg styling
             "text-sm text-gray-900": true, //text styling
             "border border-gray-300 rounded-lg": true, //border styling
             "focus:ring-blue-500 focus:border-blue-500": true, //on focus styling
@@ -49,14 +58,8 @@ const SearchBar = () => {
             "cursor-text": true,
           })}
           placeholder="Search for items"
-          onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
-            let searchText = event.currentTarget.value;
-            if (searchText.length > 0) {
-              dispatch(filterCoinData(searchText));
-            } else {
-              dispatch(setCoinData(backupData));
-            }
-          }}
+          value={searchParams}
+          onChange={changleEventHandler}
         />
       </div>
     </div>

@@ -5,6 +5,7 @@ const coinSlice = createSlice({
   initialState: {
     coinData: [] as any[],
     backupData: [] as any[],
+    categoryData: [] as any[],
     sort_market_cap: "desc",
     sort_current_price: "asc",
   },
@@ -12,6 +13,9 @@ const coinSlice = createSlice({
     setCoinData: (state, action) => {
       state.coinData = action.payload;
       state.backupData = action.payload;
+    },
+    setCategoryData: (state, action) => {
+      state.categoryData = action.payload;
     },
     clearCoinData: (state) => {
       state.coinData = [];
@@ -54,6 +58,7 @@ const coinSlice = createSlice({
 
 export const {
   setCoinData,
+  setCategoryData,
   clearCoinData,
   sortCoinData,
   filterCoinData,
