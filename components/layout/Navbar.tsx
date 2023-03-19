@@ -74,6 +74,7 @@ const Navbar = ({ navItems = defaultNavItems }: Props) => {
                   "py-1": true,
                   "flex items-center justify-start": true, //layout
                 })}
+                onClick={() => dispatch(closeMenu())}
               >
                 <li
                   className={classNames({

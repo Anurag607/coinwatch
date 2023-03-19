@@ -7,7 +7,6 @@ import classNames from "classnames";
 import SearchBar from "@/components/layout/SearchBar";
 import CategoryFetcher from "@/scipts/fetchScript";
 import Filter from "@/components/layout/Filter";
-import { setCategoryData } from "@/redux/reducers/coinSlice";
 
 const HomePage: NextPage<{ ranklist: any }> = ({ ranklist }) => {
   const dispatch = useDispatch();

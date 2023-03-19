@@ -10,7 +10,6 @@ function MyApp({ Component, pageProps }: AppProps) {
     <Provider store={store}>
       <Layout>
         <Head>
-          <link rel="icon" href="#" type="image/x-icon" />
           <meta
             name="viewport"
             content="width=device-width, initial-scale=1.0"

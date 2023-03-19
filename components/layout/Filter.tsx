@@ -58,6 +58,7 @@ const Filter = () => {
           "transition-transform .3s ease-in-out md:-translate-x-0": true, //animations
           "w-0 py-0": !isFilterOpen,
           "h-[10rem]": categoryData.length > 0,
+          "w-[8.75rem]": categoryData.length === 0,
         })}
       >
         <li
