@@ -2,6 +2,7 @@ import { setCoinData } from "@/redux/reducers/coinSlice";
 
 const filterData = async (
   data: any,
+  backupData: any,
   filterParam: string,
   reduxDispatch: React.Dispatch<any>
 ) => {
@@ -20,7 +21,7 @@ const filterData = async (
       }
     );
     if (response.status !== 404) fetchedData = await response.json();
-    data.forEach((coin: any) => {
+    backupData.forEach((coin: any) => {
       fetchedData.forEach((fetchCoin) => {
         if (coin.id === fetchCoin.id) {
           filteredData.push(coin);

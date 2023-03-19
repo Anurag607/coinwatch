@@ -21,7 +21,7 @@ const Filter = () => {
 
   const ClickEventHandler = (event: React.MouseEvent<HTMLElement>) => {
     const target = event.currentTarget;
-    filterData(coinData, target.dataset.value!, dispatch);
+    filterData(coinData, backupData, target.dataset.value!, dispatch);
     dispatch(closeFilter());
   };
 
