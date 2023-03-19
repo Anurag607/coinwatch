@@ -15,6 +15,7 @@ export type NavItem = {
 type Props = {
   navItems?: NavItem[];
 };
+
 const Sidebar = ({ navItems = defaultNavItems }: Props) => {
   const ref = useRef<HTMLDivElement>(null);
   const dispatch = useDispatch();
@@ -29,7 +30,7 @@ const Sidebar = ({ navItems = defaultNavItems }: Props) => {
         "flex flex-col justify-between": true, // layout
         "bg-indigo-700 text-zinc-50": true, // colors
         "md:w-full md:sticky md:top-16 md:z-0 top-0 z-20 fixed": true, // positioning
-        "md:h-[calc(100vh_-_120px)] h-full w-[500px]": true, // for height and width
+        "md:h-[calc(100vh_-_125px)] h-full w-[500px]": true, // for height and width
         "transition-transform .3s ease-in-out md:-translate-x-0": true, //animations
         "-translate-x-full ": !isSidebarOpen, //hide sidebar to the left when closed
       })}

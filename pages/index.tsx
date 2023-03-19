@@ -3,6 +3,7 @@ import React from "react";
 import Table from "@/components/layout/Table";
 import { useDispatch, useSelector } from "react-redux";
 import { setCoinData } from "@/redux/reducers/coinSlice";
+import classNames from "classnames";
 
 const HomePage: NextPage<{ ranklist: any }> = ({ ranklist }) => {
   const dispatch = useDispatch();
@@ -17,7 +18,13 @@ const HomePage: NextPage<{ ranklist: any }> = ({ ranklist }) => {
 
   return (
     <div className="relative container">
-      <div className="relative flex flex-col items-center justify-center min-h-fit w-full">
+      <div
+        className={classNames({
+          "relative flex flex-col items-center justify-center min-h-fit w-full":
+            true,
+          "overflow-x-hidden": true,
+        })}
+      >
         <Table />
       </div>
     </div>

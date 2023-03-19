@@ -6,14 +6,15 @@ import {
   FacebookOutlined,
 } from "@ant-design/icons";
 import Image from "next/image";
+import Link from "next/link";
 
 const Footer = () => {
   return (
-    <div
+    <footer
       className={classNames({
-        "w-full text-zinc-500": true,
-        "flex items-center justify-center gap-[70vw]": true,
-        "h-[3rem]": true,
+        "w-full container mx-auto p-4 md:px-6 md:py-2": true,
+        "sm:flex sm:items-center sm:justify-between gap-y-2": true,
+        "text-zinc-500 rounded-lg shadow dark:bg-gray-900": true,
       })}
     >
       <div className="flex justify-center items-center gap-4">
@@ -28,11 +29,17 @@ const Footer = () => {
         </h3>
       </div>
       <div className="flex justify-center items-center gap-4">
-        <LinkedinOutlined className="text-2xl text-blue-700" />
-        <FacebookOutlined className="text-2xl text-blue-700" />
-        <TwitterOutlined className="text-2xl text-blue-700" />
+        <Link href="#">
+          <LinkedinOutlined className="text-2xl text-blue-700" />
+        </Link>
+        <Link href="#">
+          <FacebookOutlined className="text-2xl text-blue-700" />
+        </Link>
+        <Link href="#">
+          <TwitterOutlined className="text-2xl text-blue-700" />
+        </Link>
       </div>
-    </div>
+    </footer>
   );
 };
 
