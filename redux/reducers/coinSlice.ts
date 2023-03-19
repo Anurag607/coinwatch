@@ -12,7 +12,7 @@ const coinSlice = createSlice({
   reducers: {
     setCoinData: (state, action) => {
       state.coinData = action.payload;
-      state.backupData = action.payload;
+      if (state.backupData.length < 50) state.backupData = action.payload;
     },
     setCategoryData: (state, action) => {
       state.categoryData = action.payload;
